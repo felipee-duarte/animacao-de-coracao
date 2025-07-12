@@ -7,7 +7,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>Feliz aniversário minha Princesa</strong>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic veritatis sit blanditiis quod nemo ullam saepe, doloremque magnam placeat ipsam quos iusto voluptatum, perferendis nihil alias maxime omnis. Fugit, vero!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="coracao"></div>
+        </div>
+    </div>
     <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+        });
         document.addEventListener('mousemove', function(e){
             let body = document.querySelector('body');
             let heart = document.createElement('span');

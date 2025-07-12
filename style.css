@@ -4,12 +4,133 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.container > .envelope-wrapper {
+    background-color: #515F2E;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.692);
+}
+
+.container > .envelope-wrapper > .envelope {
+    position: relative;
+    width: 300px;
+    height: 230px
+}
+
+.container > .envelope-wrapper > .envelope::before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    border-top: 130px solid #798F45;
+    border-right: 150px solid transparent;
+    border-left: 150px solid transparent;
+    top: 0;
+    transform-origin: top;
+    transition: all 0.5 ease-in-out 0.7s;
+}
+
+.container > .envelope-wrapper > .envelope::after {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    border-top: 130px solid transparent;
+    border-left: 150px solid #ABCA61;
+    border-right: 150px solid #ABCA61;
+    border-bottom: 100px solid #ABCA61;
+    bottom: 0;
+}
+
+.letter {
+    position: absolute;
+    right: 20%;
+    bottom: 0;
+    width: 54%;
+    height: 80%;
+    background-color: white;
+    transition: all 1s ease-in-out;
+    padding: 20px, 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.664);
+}
+
+.letter > .text {
+    font-size: 10px;
+    color: black;
+    text-align: left;
+}
+
+strong {
+    font-weight: bolder;
+    padding: 5px;
+    color:;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.664);
+}
+
+p {
+    padding: 5px;
+    font-size: 10px;
+}
+
+.coracao {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background: rgb(252, 32, 32);
+    z-index: 4;
+    transform: translate(-50%, -20%)  rotate(45deg);
+    transition: transform 0.5s ease-in-out 1s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.500);
+    cursor: pointer;
+}
+
+.coracao::before, .coracao::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: rgb(248, 39, 39);
+    border-radius: 50%;
+}
+
+.coracao::before {
+    top: -7.5px
+}
+
+.coracao::after {
+    right: 7.5px
+}
+
+.flap > .envelope::before {
+    z-index: 0;
+    transform: rotateX(180deg);
+}
+
+.flap > .envelope .letter {
+    bottom: 100px;
+    transform: scale(1.5);
+    transition-delay: 1s;
+}
+
+.flap > .coracao {
+    transform: rotate(90deg);
+    transition-delay: 0.4s;
 }
 
 body {
     min-height: 100vh;
     background: #111;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 span {
