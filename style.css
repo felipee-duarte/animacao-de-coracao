@@ -52,7 +52,7 @@
     right: 20%;
     bottom: 0;
     width: 54%;
-    height: 80%;
+    height: 100%;
     background-color: white;
     transition: all 1s ease-in-out;
     padding: 20px, 10px;
@@ -64,17 +64,23 @@
     color: black;
     text-align: left;
 }
+h2 {
+    text-align: center;
+    padding-top: 5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.664);
+}
 
-strong {
+h3 {
+    text-align: center;
     font-weight: bolder;
-    padding: 5px;
-    color:;
+    padding-top: 2px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.664);
 }
 
 p {
     padding: 5px;
     font-size: 10px;
+    text-align: center;
 }
 
 .coracao {
@@ -117,6 +123,7 @@ p {
     bottom: 100px;
     transform: scale(1.5);
     transition-delay: 1s;
+    z-index: 2;
 }
 
 .flap > .coracao {
